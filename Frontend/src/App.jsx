@@ -30,7 +30,6 @@ const App = () => {
     try {
       const res = await axios.get(`${API_BASE_URL}/todos`);
       setTodos(res.data);
-      toast.success("Todos fetched successfully");
     } catch (err) {
       console.error("Error fetching todos:", err);
       toast.error("Failed to fetch todos");
@@ -60,7 +59,26 @@ const App = () => {
     }
   };
 
+  const checkBackend = async () => {
+    const loadingToastId = toast.loading("Checking backend...");
+    const res = await axios
+      .get(`${API_BASE_URL}/`)
+      .then((res) => {
+        toast.dismiss(loadingToastId);
+        toast.success("Backend is live!");
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("Failed to check backend");
+      })
+      .finally(() => {
+        toast.dismiss(loadingToastId);
+      });
+  };
+
   useEffect(() => {
+    checkBackend();
     fetchTodos();
   }, []);
 

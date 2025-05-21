@@ -20,6 +20,10 @@ app.get("/todos", async (req, res) => {
   res.json(result.rows);
 });
 
+app.get("/", (req, res) => {
+  res.send("🚀 Backend is live!");
+});
+
 const sendSlackMessage = require("./utils/slack");
 const summarizeTodos = require("./utils/summarize");
 
