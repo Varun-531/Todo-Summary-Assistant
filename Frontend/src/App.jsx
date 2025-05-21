@@ -78,7 +78,7 @@ const App = () => {
   return (
     <div className="flex flex-col items-center justify-center">
       <h1 className="text-4xl font-bold text-center py-10">
-        AI powered Todo Summarizer
+        AI-Powered Todo Summarizer
       </h1>
 
       <div className="flex justify-center items-center">
