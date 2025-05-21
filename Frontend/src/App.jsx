@@ -23,17 +23,11 @@ const App = () => {
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const fetchTodos = async () => {
-    const loadingToastId = toast.loading(
-      "Fetching todos... Initializing backend..."
-    );
-
     try {
       const res = await axios.get(`${API_BASE_URL}/todos`);
       setTodos(res.data);
     } catch (err) {
       console.error("Error fetching todos:", err);
-    } finally {
-      toast.dismiss(loadingToastId);
     }
   };
 
