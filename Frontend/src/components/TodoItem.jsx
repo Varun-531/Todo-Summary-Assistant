@@ -3,14 +3,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import axios from "axios";
 import { toast } from "sonner";
+import { Check, Pencil, Trash2 } from "lucide-react";
 
 const TodoItem = ({ todo, refreshTodos }) => {
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const [inputValue, setInputValue] = useState(todo.text);
   const [completed, setCompleted] = useState(todo.status === "completed");
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/todos/${todo.id}`);
+      await axios.delete(`${API_BASE_URL}/todos/${todo.id}`);
       toast.success("Todo deleted successfully");
       refreshTodos();
     } catch (error) {
@@ -20,7 +22,7 @@ const TodoItem = ({ todo, refreshTodos }) => {
 
   const handleDone = async () => {
     try {
-      await axios.put(`http://localhost:5000/todos/${todo.id}/status`);
+      await axios.put(`${API_BASE_URL}/todos/${todo.id}/status`);
       setCompleted(true);
       toast.success("Todo updated successfully");
       refreshTodos();
@@ -36,7 +38,7 @@ const TodoItem = ({ todo, refreshTodos }) => {
       return;
     }
     try {
-      await axios.put(`http://localhost:5000/todos/${todo.id}`, {
+      await axios.put(`${API_BASE_URL}/todos/${todo.id}`, {
         text: inputValue,
       });
       toast.success("Todo updated successfully");
@@ -56,14 +58,19 @@ const TodoItem = ({ todo, refreshTodos }) => {
       />
       <Button
         onClick={handleEdit}
-        disabled={completed || inputValue === todo.text || !inputValue.trim()} // ✅ use this
+        disabled={completed || inputValue === todo.text || !inputValue.trim()}
       >
-        Edit
+        <Pencil /> Edit
       </Button>
       {completed ? (
-        <Button onClick={handleDelete}>Delete</Button>
+        <Button onClick={handleDelete}>
+          <Trash2 />
+          Delete
+        </Button>
       ) : (
-        <Button onClick={handleDone}>Done</Button>
+        <Button onClick={handleDone}>
+          <Check /> Done
+        </Button>
       )}
     </div>
   );

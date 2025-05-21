@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import axios from "axios";
 import { toast } from "sonner";
 const AddTodo = ({ onAdd }) => {
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const [todo, setTodo] = useState("");
   const handleAdd = async () => {
     if (!todo.trim()) {
@@ -11,7 +12,7 @@ const AddTodo = ({ onAdd }) => {
       return;
     }
     try {
-      await axios.post("http://localhost:5000/todos", { text: todo });
+      await axios.post(`${API_BASE_URL}/todos`, { text: todo });
       toast.success("Todo added successfully");
       setTodo("");
       onAdd();
@@ -24,6 +25,7 @@ const AddTodo = ({ onAdd }) => {
       <Input
         type="text"
         placeholder="Add Todo"
+        value={todo}
         onChange={(e) => setTodo(e.target.value)}
       />
       <Button onClick={handleAdd}>Add</Button>
