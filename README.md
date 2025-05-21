@@ -13,6 +13,12 @@ A full-stack application to manage and summarize your todos using AI. Users can 
 - `Frontend/`: Contains all React components, UI logic, and API integrations.
 - `Backend/`: Contains Express server, routes for todos and summarization, OpenAI integration, and Slack webhook logic.
 
+## 📐 System Architecture
+
+The following diagram illustrates how the system components interact:
+
+![System Architecture](./assets/architecture-diagram.png)
+
 ---
 
 ## 🖥 Frontend Setup
