@@ -10,26 +10,26 @@ A full-stack application to manage and summarize your todos using AI. Users can 
 
 ## 📂 Project Structure
 
-- `frontend/`: Contains all React components, UI logic, and API integrations.
+- `Frontend/`: Contains all React components, UI logic, and API integrations.
 - `backend/`: Contains Express server, routes for todos and summarization, OpenAI integration, and Slack webhook logic.
 
 ---
 
 ## 🖥 Frontend Setup
 
-📁 Navigate to the `frontend/` directory to set up the React app.
+📁 Navigate to the `Frontend/` directory to set up the React app.
 
 ### ⚙️ Steps to Run Locally:
 
 ```bash
-cd frontend
+cd Frontend
 npm install
 npm run dev
 ```
 
 ### 🔑 Environment Variables
 
-Create a `.env` file in the `frontend/` directory with the following:
+Create a `.env` file in the `Frontend/` directory with the following:
 
 ```env
 VITE_API_BASE_URL=https://todo-summary-assistant-1x1s.onrender.com
@@ -41,12 +41,12 @@ Replace the URL if your backend is deployed elsewhere.
 
 ## 🛠 Backend Setup
 
-📁 Navigate to the backend/ directory to set up the Node.js server.
+📁 Navigate to the Backend/ directory to set up the Node.js server.
 
 ### ⚙️ Steps to Run Locally:
 
 ```bash
-cd backend
+cd Backend
 npm install
 npm start
 ```
@@ -55,7 +55,7 @@ Make sure your database (Supabase) is correctly configured before starting the s
 
 ### 🔑 Environment Variables
 
-Create a **`.env`** file in the `backend/` directory with the following variables:
+Create a **`.env`** file in the `Backend/` directory with the following variables:
 
 ```env
 PORT=5000
