@@ -32,7 +32,6 @@ const App = () => {
       setTodos(res.data);
     } catch (err) {
       console.error("Error fetching todos:", err);
-      toast.error("Failed to fetch todos");
     } finally {
       toast.dismiss(loadingToastId);
     }
