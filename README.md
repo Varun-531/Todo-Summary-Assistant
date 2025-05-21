@@ -11,7 +11,7 @@ A full-stack application to manage and summarize your todos using AI. Users can 
 ## 📂 Project Structure
 
 - `Frontend/`: Contains all React components, UI logic, and API integrations.
-- `backend/`: Contains Express server, routes for todos and summarization, OpenAI integration, and Slack webhook logic.
+- `Backend/`: Contains Express server, routes for todos and summarization, OpenAI integration, and Slack webhook logic.
 
 ---
 
