@@ -9,7 +9,7 @@ A full-stack application to manage and summarize your todos using AI. Users can 
 
 ## 🎥 YouTube Explanation Video
 
-📺 [Watch on YouTube](https://youtu.be/N-60M_xmvo8)
+📺 [Watch on YouTube](https://youtu.be/stcKSfzl81I)
 ---
 
 ## 📂 Project Structure
