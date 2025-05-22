@@ -9,12 +9,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Supabase DB Connection
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
 });
 
-// Get all todos
 app.get("/todos", async (req, res) => {
   const result = await pool.query("SELECT * FROM todos ORDER BY id DESC");
   res.json(result.rows);
@@ -60,7 +58,6 @@ app.post("/summarize", async (req, res) => {
   }
 });
 
-// Update todo text
 app.put("/todos/:id", async (req, res) => {
   const { id } = req.params;
   const { text } = req.body;
@@ -68,7 +65,6 @@ app.put("/todos/:id", async (req, res) => {
   res.json({ success: true });
 });
 
-// Update todo status
 app.put("/todos/:id/status", async (req, res) => {
   const { id } = req.params;
   await pool.query("UPDATE todos SET status = $1 WHERE id = $2", [
@@ -78,7 +74,6 @@ app.put("/todos/:id/status", async (req, res) => {
   res.json({ success: true });
 });
 
-// Delete todo
 app.delete("/todos/:id", async (req, res) => {
   const { id } = req.params;
   await pool.query("DELETE FROM todos WHERE id = $1", [id]);
