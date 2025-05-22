@@ -6,6 +6,10 @@ A full-stack application to manage and summarize your todos using AI. Users can 
 
 🔗 [https://todo-summary-assistant-five.vercel.app/](https://todo-summary-assistant-five.vercel.app/)
 
+
+## 🎥 YouTube Explanation Video
+
+📺 [Watch on YouTube](https://youtu.be/stcKSfzl81I)
 ---
 
 ## 📂 Project Structure
