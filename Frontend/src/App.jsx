@@ -79,12 +79,6 @@ const App = () => {
         AI-Powered Todo Summarizer
       </h1>
 
-      {isCheckingBackend && (
-        <p className="text-sm text-muted-foreground mb-4">
-          Checking backend status...
-        </p>
-      )}
-
       <div className="flex justify-center items-center">
         <AddTodo onAdd={fetchTodos} />
       </div>
